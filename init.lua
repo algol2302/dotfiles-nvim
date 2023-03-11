@@ -18,12 +18,18 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "sonokai",
+  -- colorscheme = "astrodark",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
-    virtual_text = true,
+    virtual_text = {
+      source = "always", -- Or "if_many"
+      prefix = "●", -- Could be '■', '▎', 'x'
+    },
+    severity_sort = true,
     underline = true,
+    signs = { active = true },
   },
 
   lsp = {
@@ -50,6 +56,7 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      "gopls",
     },
   },
 
