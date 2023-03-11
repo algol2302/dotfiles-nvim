@@ -6,6 +6,7 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       -- ensure_installed = { "lua_ls" },
+      ensure_installed = { "pyright", "gopls" },
     },
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
@@ -14,6 +15,7 @@ return {
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
       -- ensure_installed = { "prettier", "stylua" },
+      ensure_installed = { "shellcheck", "stylua", "sqlfluff" },
     },
   },
   {
@@ -21,6 +23,8 @@ return {
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
       -- ensure_installed = { "python" },
+      automatic_installation = false,
+      automatic_setup = false,
     },
   },
 }
